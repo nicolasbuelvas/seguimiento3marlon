@@ -1,4 +1,4 @@
-public class Main {
+public class ExerciseOne {
     public static void main(String[] args) {
 
         int[] list = {1, 2, 2, 3, 4, 4, 4, 5, 6, 6};
