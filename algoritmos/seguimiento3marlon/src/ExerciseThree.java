@@ -1,15 +1,11 @@
 public class ExerciseThree {
     public static void main(String[] args) {
+        System.out.println("Welcome. Enter a binary string to count the number of 1s:");
+        String bitString = readLine();
 
-        String bitString1 = "1011001";
-        int count1 = countOnes(bitString1);
-        System.out.println("Input: " + bitString1);
-        System.out.println("Output: " + count1);
-
-        String bitString2 = "0000000";
-        int count2 = countOnes(bitString2);
-        System.out.println("Input: " + bitString2);
-        System.out.println("Output: " + count2);
+        int count = countOnes(bitString);
+        System.out.println("Input: " + bitString);
+        System.out.println("Output: " + count);
     }
 
     public static int countOnes(String bitString) {
@@ -20,5 +16,18 @@ public class ExerciseThree {
             }
         }
         return count;
+    }
+
+    public static String readLine() {
+        String input = "";
+        try {
+            char c;
+            while ((c = (char) System.in.read()) != '\n') {
+                input += c;
+            }
+        } catch (Exception e) {
+            return "";
+        }
+        return input.trim();
     }
 }

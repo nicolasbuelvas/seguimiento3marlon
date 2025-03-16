@@ -1,15 +1,11 @@
 public class ExerciseTwo {
     public static void main(String[] args) {
+        System.out.println("Welcome. Enter a word to check if it's a palindrome:");
+        String word = readLine();
 
-        String word1 = "reconocer";
-        boolean result1 = isPalindrome(word1);
-        System.out.println("Input: " + word1);
-        System.out.println("Output: " + result1);
-
-        String word2 = "hola";
-        boolean result2 = isPalindrome(word2);
-        System.out.println("Input: " + word2);
-        System.out.println("Output: " + result2);
+        boolean result = isPalindrome(word);
+        System.out.println("Input: " + word);
+        System.out.println("Output: " + (result ? "verdadero" : "falso"));
     }
 
     public static boolean isPalindrome(String word) {
@@ -20,5 +16,18 @@ public class ExerciseTwo {
             }
         }
         return true;
+    }
+
+    public static String readLine() {
+        String input = "";
+        try {
+            char c;
+            while ((c = (char) System.in.read()) != '\n') {
+                input += c;
+            }
+        } catch (Exception e) {
+            return "";
+        }
+        return input.trim();
     }
 }
